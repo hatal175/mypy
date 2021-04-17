@@ -164,6 +164,7 @@ class ConversionSpecifier:
     def has_star(self) -> bool:
         return self.width == '*' or self.precision == '*'
 
+
 class LineNoChanger(TraverserVisitor):
     def __init__(self, line: int, end_line: Optional[int], column: int) -> None:
         self.line = line
@@ -188,6 +189,7 @@ class LineNoChanger(TraverserVisitor):
 
     def visit_str_expr(self, o: StrExpr) -> None:
         self.set_context_info(o)
+
 
 class StringFormatterChecker:
     """String interpolation/formatter type checker.
